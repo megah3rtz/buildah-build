@@ -14,9 +14,6 @@ import {
 } from "./utils";
 
 export async function run(): Promise<void> {
-    if (process.env.RUNNER_OS !== "Linux") {
-        throw new Error("buildah, and therefore this action, only works on Linux. Please use a Linux runner.");
-    }
 
     // get buildah cli
     const buildahPath = await io.which("buildah", true);
